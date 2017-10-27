@@ -1,0 +1,137 @@
+
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightgrey;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.profile-navbar {
+    height: 60px;
+    width: 100%;
+    background-image: linear-gradient(99deg, #ff7a6e, #ff9770);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.profile-nav-logos {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.profile-navbar img{
+    height: 32px;
+}
+
+.profile-navbar h2 {
+    width: 180px;
+}
+
+.profile-container{
+    width: 65%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.profile-name {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+}
+
+.profile-img {
+    height: 140px;
+    border: 3px solid orange;
+}
+
+.profile-name-left {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile-name-right {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.update-button {
+    height: 36px;
+    width: 100px;
+    color: #f2f2f2;
+    border-radius: 1px;
+    background-image: radial-gradient(circle at 50%-46%, #737373, #403d39);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+.cancel-button {
+    height: 36px;
+    width: 100px;
+    border-radius: 1px;
+    background-image: radial-gradient(circle at 50% 0, #fff, #f1eceb);
+    border: solid 1px #ccc3c3;
+    font-weight: 600;
+}
+
+.profile-data {
+    height: 425px;
+    width: 100%;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.profile-data-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-data-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-data p {
+    color: #808080;
+    padding-left: 20px;
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.profile-data input {
+    border: 1px solid #ff9770;
+    height: 40px;
+    width: 250px;
+}
+
+.profile-data select {
+    height: 30px;
+    width: 225px;
+}
