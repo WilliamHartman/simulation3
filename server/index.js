@@ -55,20 +55,37 @@ passport.serializeUser((id, done) => {
 })
 
 passport.deserializeUser((id, done) => {
-
+    app.get('db').find_session_user([id]).then(user => {
+        done(null, user[0])
+    })
 })
 
 //AUTH
-app.get('/auth', passport.authenticate('auth0'))
-app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/private',
-    failureRedirect: '/auth'
+app.get('/api/auth/login', passport.authenticate('auth0'))
+app.get('/api/auth/callback', passport.authenticate('auth0', {
+    successRedirect: 'http://localhost:3000/auth/setUser',
+    failureRedirect: '/api/auth/login'
 }))
+
+app.get('/api/auth/setUser', (req, res) => {
+
+})
+
+app.get('/api/auth/authenticated', (req, res) => {
+    if(req.user) {
+        return res.status(200).send(req.user)
+    }
+    else {
+        return res.status(401).send(req.user)
+    }
+})
+
+app.post('/api/auth/logout')
 
 //FRIEND ENDPOINTS
 
 //USER ENDPOINTS
-app.patch('/api/user/patch/:id', (req, res) =>{
+app.patch('/api/user/patch/:id', (req, res) => {
 
 });
 
