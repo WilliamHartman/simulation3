@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Profile from './components/Profile/Profile';
+import Dashboard from './components/Dashboard/Dashboard';
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route path='/' exact component={ Login }/>
+          <Route path='/dashboard' component={ Dashboard }/>
           <Route path='/profile' component={ Profile } />
         </div>
       </BrowserRouter>

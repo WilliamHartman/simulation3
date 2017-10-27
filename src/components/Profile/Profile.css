@@ -134,4 +134,6 @@
 .profile-data select {
     height: 30px;
     width: 225px;
+    background: lightgray;
+    border-radius: 3px;
 }

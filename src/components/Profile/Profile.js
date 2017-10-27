@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './Profile.css';
 import homeLogo from './../../img/home.png';
 import searchLogo from './../../img/search.png';
-import axios from 'axios';
+//import axios from 'axios';
 
 
 class Profile extends Component {
@@ -65,7 +65,7 @@ class Profile extends Component {
                 <div className='profile-container'>
                     <div className='profile-name'>
                         <div className='profile-name-left'>
-                            <img src={`https://robohash.org/${user.firstName}`} alt="profile picture" className='profile-img'/>
+                            <img src={`https://robohash.org/${user.firstName}`} alt="profile" className='profile-img'/>
                             <div>
                                 <h1>{user.firstName}</h1>
                                 <h1>{user.lastName}</h1>
