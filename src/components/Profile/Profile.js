@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './Profile.css';
 import homeLogo from './../../img/home.png';
 import searchLogo from './../../img/search.png';
-
+import axios from 'axios';
 
 
 class Profile extends Component {
@@ -12,6 +12,7 @@ class Profile extends Component {
 
         this.jsxDaysCreator = this.jsxDaysCreator.bind(this);
         this.jsxYearsCreator = this.jsxYearsCreator.bind(this);
+        this.sendUpdate = this.sendUpdate.bind(this);
     }
 
 
@@ -29,6 +30,21 @@ class Profile extends Component {
             arr.push(<option>{i}</option>)
         }
         return arr;
+    }
+
+    sendUpdate(){
+        let tempUser = {
+            first_name: this.refs.firstName.value,
+            last_name: this.refs.lastName.value,
+            gender: this.refs.gender.value,
+            hair_color: this.refs.hairColor.value,
+            eye_color: this.refs.eyeColor.value,
+            hobbies: this.refs.hobby.value,
+            birthday_day: this.refs.birthdayDay.value,
+            birthday_month: this.refs.birthdayMonth.value,
+            birthday_year: this.refs.birthdayYear.value
+        }
+        console.log(tempUser)
     }
 
     render(){
@@ -56,72 +72,72 @@ class Profile extends Component {
                             </div>
                         </div>
                         <div className='profile-name-right'>
-                            <button className='update-button'>Update</button>
+                            <button className='update-button' onClick={this.sendUpdate}>Update</button>
                             <button className='cancel-button'>Cancel</button>
                         </div>
                     </div>
                     <div className='profile-data'>
                         <div className='profile-data-left'>
                             <p className='profile-p'>First Name</p>
-                            <input type="text"/>
+                            <input ref='firstName'/>
                             <p>Last Name</p>
-                            <input type="text"/>
+                            <input ref='lastName'/>
                             <p>Gender</p>
-                            <select>
+                            <select ref='gender'>
                                 <option disabled selected>-- Select --</option>
-                                <option value="">Male</option>
-                                <option value="">Female</option>
+                                <option >Male</option>
+                                <option >Female</option>
                             </select>
                             <p>Hair Color</p>
-                            <select>
+                            <select ref='hairColor'>
                                 <option disabled selected>-- Select --</option>
-                                <option value="">Brown</option>
-                                <option value="">Blue</option>
-                                <option value="">Green</option>
-                                <option value="">Red</option>
-                                <option value="">Blonde</option>
-                                <option value="">White</option>
+                                <option>Brown</option>
+                                <option>Blue</option>
+                                <option>Green</option>
+                                <option>Red</option>
+                                <option>Blonde</option>
+                                <option>White</option>
                             </select>
                             <p>Eye Color</p>
-                            <select>
+                            <select ref='eyeColor'>
                                 <option disabled selected>-- Select --</option>
-                                <option value="">Brown</option>
-                                <option value="">Blue</option>
-                                <option value="">Green</option>
+                                <option>Brown</option>
+                                <option>Blue</option>
+                                <option>Green</option>
                             </select>
                         </div>
                         <div className='profile-data-right'>
                             <p>Hobby</p>
-                            <select>
+                            <select ref='hobby'>
                                 <option disabled selected>-- Select --</option>
-                                <option value="">Video Games</option>
-                                <option value="">Hiking</option>
-                                <option value="">Fishing</option>
-                                <option value="">Rafting</option>
+                                <option>Video Games</option>
+                                <option>Hiking</option>
+                                <option>Fishing</option>
+                                <option>Rafting</option>
                             </select>
                             <p>Birthday Day</p>
-                            <select>
+                            <select ref='birthdayDay'>
                                 <option disabled selected>-- Select --</option>
                                 {jsxDays}
                             </select>
                             <p>Birthday Month</p>
-                            <select>
+                            <select ref='birthdayMonth'>
                                 <option disabled selected>-- Select --</option>
-                                <option value="">January</option>
-                                <option value="">February</option>
-                                <option value="">March</option>
-                                <option value="">April</option>
-                                <option value="">May</option>
-                                <option value="">June</option>
-                                <option value="">July</option>
-                                <option value="">August</option>
-                                <option value="">September</option>
-                                <option value="">October</option>
-                                <option value="">November</option>
-                                <option value="">December</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
                             </select>
                             <p>Birthday Year</p>
-                            <select>
+                            <select  ref='birthdayYear'>
                                 <option disabled selected>-- Select --</option>
                                 {jsxYears}
                             </select>
