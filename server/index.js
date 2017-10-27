@@ -36,7 +36,7 @@ passport.use(new Auth0Strategy({
     const db = app.get('db')
     const userData = profile._json;
     db.find_user([userData.identities[0].user_id]).then(user => {
-        if(user[0]){
+        if(user[0]   ){
             return done(null, user[0].id);
         }
         else {
@@ -58,11 +58,27 @@ passport.deserializeUser((id, done) => {
 
 })
 
+//AUTH
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/private',
     failureRedirect: '/auth'
 }))
+
+//FRIEND ENDPOINTS
+
+//USER ENDPOINTS
+app.patch('/api/user/patch/:id', (req, res) =>{
+
+});
+
+app.get('/api/user/list', (req, res) => {
+
+})
+
+app.get()
+
+//RECOMMENDED ENDPOINTS
 
 const PORT = 3001
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
