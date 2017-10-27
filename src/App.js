@@ -8,18 +8,12 @@ import Profile from './components/Profile/Profile';
 class App extends Component {
   render() {
     return (
-<<<<<<< HEAD
-      <div className="App">
-        
-      </div>
-=======
       <BrowserRouter>
         <div className="App">
           <Route path='/' exact component={ Login }/>
           <Route path='/profile' component={ Profile } />
         </div>
       </BrowserRouter>
->>>>>>> 23ffe4f661a8dba2a2cc6a664d92c1ccf4f7c9a5
     );
   }
 }
