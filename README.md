@@ -1,2 +1,2 @@
 # Helo App :)
-Made by William, Caitlyn, Tim, and Brody
+Made by William, Nata;oa, Tim, and Brody
